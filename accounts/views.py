@@ -24,6 +24,6 @@ class SignUpView(FormView):
         user = authenticate(username=username, password=raw_password)
         login(self.request, user)
         messages.info(
-            self.request, "You signed up successfully."
+            self.request, f"You signed up {username} successfully."
         )
         return response
