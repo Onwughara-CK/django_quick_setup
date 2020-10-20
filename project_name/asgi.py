@@ -11,8 +11,8 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-settings = 'project_name.settings.base' if os.environ.get('DJANGO_DEBUG', '') \
-         != 'False' else 'project_name.settings.production'
+settings = 'project_name.settings.development' if os.environ.get('ENV_ROLE') \
+            == 'development' else 'project_name.settings.production'
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings)
 
 application = get_asgi_application()

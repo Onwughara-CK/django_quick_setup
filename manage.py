@@ -3,12 +3,11 @@
 import os
 import sys
 
-
 def main():
     """Run administrative tasks."""
-    settings = 'project_name.settings.base' if os.environ.get('DJANGO_DEBUG', '') \
-         != 'False' else 'project_name.settings.production'
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings)
+    setting = 'project_name.settings.development' if os.environ.get('ENV_ROLE') \
+                == 'development' else 'project_name.settings.production'
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', setting)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

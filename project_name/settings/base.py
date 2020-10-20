@@ -19,11 +19,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get(
-    'DJANGO_SECRET_KEY', "3e8s!q&y9^neis=!!#7h525j-(e90iknlby-@u^$uqw*xp_*gk")
+SECRET_KEY ="3e8s!q&y9^neis=!!#7h525j-(e90iknlby-@u^$uqw*xp_*gk"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = True
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -31,10 +31,6 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailAuthBackend',
 ]
-
-ALLOWED_HOSTS = []
-
-
 
 # Application definition
 
@@ -133,12 +129,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # LOGIN
 LOGIN_URL = '/login/'

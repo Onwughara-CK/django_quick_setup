@@ -1,21 +1,32 @@
 {% load static %}
 
-{% block title %}
-
-{% endblock title %}   
-
-
-{% block styles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock title %}   
+    </title>
+    {% block styles %}    
+    {% endblock styles %}
+</head>
+<body>
+    {% block content %}    
+    {% endblock content %}
     
-{% endblock styles %}
+
+    {% block javascript %}    
+    {% endblock javascript %}    
+</body>
+</html>
+
+
+
+
+
     
 
-{% block content %}
-    
-{% endblock content %}
-    
 
-{% block javascript %}
-    
-{% endblock javascript %}
     
